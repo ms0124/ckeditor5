@@ -5,7 +5,7 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-import Direction from 'ckeditor5-direction'
+import Direction from '@ckeditor/ckeditor5-direction/src/direction'
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -75,6 +75,7 @@ ClassicEditor.builtinPlugins = [
 ClassicEditor.defaultConfig = {
   toolbar: {
 		items: [
+			'direction', 
 			'heading',
 			'|',
 			'bold',
