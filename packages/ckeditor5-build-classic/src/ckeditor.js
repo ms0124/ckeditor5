@@ -5,7 +5,7 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-import Direction from '@ckeditor/ckeditor5-direction/src/direction'
+import Direction from '@ckeditor/ckeditor5-direction/src/direction';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -30,10 +30,15 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
-import Font from '@ckeditor/ckeditor5-font/src/font'
+import Font from '@ckeditor/ckeditor5-font/src/font';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import ImageResizeEditing from '@ckeditor/ckeditor5-image/src/imageresize/imageresizeediting';
+import ImageResizeHandles from '@ckeditor/ckeditor5-image/src/imageresize/imageresizehandles';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -63,19 +68,23 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-  TextTransformation,
-  Font,
-  Underline,
-  Alignment,
-  ImageInsert
+	TextTransformation,
+	Font,
+	Underline,
+	Alignment,
+	ImageInsert,
+	ImageResizeEditing,
+	ImageResizeHandles,
+	ImageResize,
+	TableProperties,
+	TableCellProperties,
 ];
-
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-  toolbar: {
+	toolbar: {
 		items: [
-			'direction', 
+			'direction',
 			'heading',
 			'|',
 			'bold',
@@ -92,16 +101,19 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
-		]
+			'redo',
+			'insertImage',
+		],
 	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
-		]
+			'mergeTableCells',
+			'tableProperties',
+			'tableCellProperties',
+		],
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'fa'
+	language: 'fa',
 };
