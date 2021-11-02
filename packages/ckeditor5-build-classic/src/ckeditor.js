@@ -39,11 +39,15 @@ import ImageResizeHandles from '@ckeditor/ckeditor5-image/src/imageresize/imager
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+	Code,
+	CodeBlock,
 	Direction,
 	Essentials,
 	UploadAdapter,
@@ -103,6 +107,26 @@ ClassicEditor.defaultConfig = {
 			'undo',
 			'redo',
 			'insertImage',
+			'codeBlock',
+			'code',
+		],
+	},
+	codeBlock: {
+		languages: [
+			{ language: 'plaintext', label: 'Plain text' }, // The default language.
+			{ language: 'c', label: 'C' },
+			{ language: 'cs', label: 'C#' },
+			{ language: 'cpp', label: 'C++' },
+			{ language: 'css', label: 'CSS' },
+			{ language: 'diff', label: 'Diff' },
+			{ language: 'html', label: 'HTML' },
+			{ language: 'java', label: 'Java' },
+			{ language: 'javascript', label: 'JavaScript' },
+			{ language: 'php', label: 'PHP' },
+			{ language: 'python', label: 'Python' },
+			{ language: 'ruby', label: 'Ruby' },
+			{ language: 'typescript', label: 'TypeScript' },
+			{ language: 'xml', label: 'XML' },
 		],
 	},
 	table: {
