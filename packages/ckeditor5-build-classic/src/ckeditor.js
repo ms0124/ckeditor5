@@ -25,9 +25,13 @@ import Link from '@ckeditor/ckeditor5-link/src/link';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import ImageBlock from '@ckeditor/ckeditor5-image/src/imageblock';
 import ImageInline from '@ckeditor/ckeditor5-image/src/imageinline';
-import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
+// import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+// import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+import MediaEmbedEditing from '@ckeditor/ckeditor5-media-embed/src/mediaembedediting';
+import MediaEmbedUI from '@ckeditor/ckeditor5-media-embed/src/mediaembedui';
+import Widget from '@ckeditor/ckeditor5-widget/src/widget';
+
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
@@ -50,7 +54,10 @@ export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-	AutoImage,
+	Widget,
+	MediaEmbedUI,
+	MediaEmbedEditing,
+	// AutoImage,
 	ImageInline,
 	ImageBlock,
 	LinkImage,
@@ -75,7 +82,7 @@ ClassicEditor.builtinPlugins = [
 	Indent,
 	Link,
 	List,
-	MediaEmbed,
+	// MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	Table,
