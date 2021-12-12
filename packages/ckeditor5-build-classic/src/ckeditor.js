@@ -22,6 +22,10 @@ import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
+import ImageBlock from '@ckeditor/ckeditor5-image/src/imageblock';
+import ImageInline from '@ckeditor/ckeditor5-image/src/imageinline';
+import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
@@ -46,6 +50,10 @@ export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+	AutoImage,
+	ImageInline,
+	ImageBlock,
+	LinkImage,
 	Code,
 	CodeBlock,
 	Direction,
